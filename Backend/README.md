@@ -148,3 +148,35 @@ The request body should be in JSON format and include the following fields:
     - `capacity` (number): Vehicle capacity.
     - `vehicleType` (string): Vehicle type.
 - `token` (string): JWT Token
+
+# Backend API Documentation
+
+## `/captains/register` Endpoint
+
+### Description
+
+Registers a new captain by creating a captain account with the provided information.
+
+### HTTP Method
+
+`POST`
+
+### Request Body
+
+The request body should be in JSON format and include the following fields:
+
+```json
+{
+  "fullname": {
+    "firstname": "string", // required, minimum 3 characters
+    "lastname": "string" // optional, minimum 3 characters
+  },
+  "email": "string", // required, must be a valid email
+  "password": "string", // required, minimum 6 characters
+  "vehicle": {
+    "color": "string", // required, minimum 3 characters
+    "plate": "string", // required, minimum 3 characters
+    "capacity": 1, // required, minimum 1
+    "vehicleType": "string" // required, must be one of 'car', 'motorcycle', 'auto'
+  }
+}
